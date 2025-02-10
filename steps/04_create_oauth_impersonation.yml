@@ -1,0 +1,38 @@
+id: create_oauth_impersonation
+learningObjectives:
+  - Create a Machine-to-Machine OAuth client with impersonation for frontend authentication
+  - Configure proper scopes and origins for browser-based access
+hints:
+  - "For Allowed Origins, use your Codespace URL (it looks like https://yourname-yourproject-xxxx.github.dev)"
+  - "The impersonation client needs both user.profile and user.impersonation scopes"
+  - "Save your credentials securely - you'll need them for the environment variables"
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: "Now for our second OAuth client! This one is special - it's a Machine-to-Machine client with impersonation capabilities. This means it can act on behalf of your users when they access Qlik content from their browsers."
+          - text: "Think of it as a trusted translator between your users and Qlik Cloud - it helps verify who they are and what they're allowed to see."
+          - text: "Here's how to set it up:"
+          - text: "1. In OAuth clients, click 'Create new' and select 'Web'\n
+              2. Name it 'Frontend Auth Client'\n
+              3. For scopes, select:\n
+                 • user.profile\n
+                 • user.impersonation\n
+              4. Important: Add your Codespace URL to the Allowed Origins list. You can find this URL in your browser's address bar - it looks like 'https://yourname-yourproject-xxxx.github.dev'\n
+              5. Check the box to enable machine-to-machine impersonation\n
+              6. Click Create and save your Client ID and Secret"
+          - text: "7. Final step: Just like before, set the consent method to 'Trusted' through the '⋮' menu"
+          - text: "Here's what the impersonation setting should look like:"
+          - text: "![Enable Impersonation](https://qlik.dev/_astro/7.0kAhg7Q9_1NVk60.webp)"
+          - text: "⚠️ Keep these credentials safe too - you'll need both sets (backend and frontend) for the next step!"
+          - text: "Ready to move on to environment variables?"
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: finish_step

@@ -1,17 +1,20 @@
 id: upload_configure_qlik
 learningObjectives:
-  - Upload the demo Qlik Sense app and configure sharing permissions
+  - Download and upload the Consumer Sales demo Qlik Sense app
+  - Configure sharing permissions for the uploaded app
 hints:
+  - "The demo app is located in qlik_app/Consumer Sales.qvf in your repo"
   - "The app ID looks like a GUID: 946d5af4-e089-42d3-9ba7-1d21adb68472"
-  - Can't find the app ID? Open the app and check the URL - it's right there!
+  - "Can't find the app ID? Open the app and check the URL - it's right there!"
 startFlow:
   do:
     - actionId: bot_message
       params:
         person: lucca
         messages:
-          - text: "Time to set up our demo app in Qlik Cloud! First, log into your tenant."
-          - text: "Look for the 'Add new' or '+' button at the top - that's where you'll upload your demo Qlik Sense app. You'll find the app in your project files."
+          - text: "Time to set up our demo app in Qlik Cloud! First, locate the 'Consumer Sales.qvf' file in the qlik_app folder of your repository and download it to your local machine."
+          - text: "Now, log into your Qlik Cloud tenant."
+          - text: "Look for the 'Add new' or '+' button at the top - that's where you'll upload the Consumer Sales app you just downloaded."
           - text: "Once your app is uploaded, open it up. Take a look at the URL in your browser - you'll see an important ID there that looks like this: `946d5af4-e089-42d3-9ba7-1d21adb68472`. This is your app ID!"
           - text: "Next, let's give everyone access to your app. Find the 'Spaces' section in the left menu and create a new shared space. Move your app there by clicking the '⋮' menu on your app and selecting 'Move'."
           - text: "Last thing - in your new space's settings, make sure to grant 'Can view' access to everyone in the tenant."

@@ -1,0 +1,36 @@
+id: create_oauth_client
+learningObjectives:
+  - Create a Machine-to-Machine (M2M) OAuth client for backend authentication
+  - Configure proper scopes and consent settings
+hints:
+  - "You need Tenant Admin role to create OAuth clients"
+  - "Make sure to save your client ID and secret - you'll need them later!"
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: "Let's create our first OAuth client! We need this Machine-to-Machine (M2M) client to let our backend application securely communicate with Qlik Cloud services. This client will handle tasks like fetching app data and managing authentication tokens."
+          - text: "Think of it as creating a secure key for your backend - it allows your server to prove it's authorized to access Qlik's services, without requiring user interaction."
+          - text: "Here's the step-by-step process:"
+          - text: "1. In your Qlik Cloud tenant, go to the Management Console and select 'OAuth clients'\n
+              2. Click 'Create new' and select 'Web' from the Client type dropdown\n
+              3. Give your client a name (e.g., 'Backend Auth Client')\n
+              4. In the Scopes section, select these required scopes:\n
+                 • user_default\n
+                 • admin_classic\n
+              5. Important: Check the box to enable the client as a machine-to-machine application\n
+              6. Click Create and save your Client ID and Secret somewhere secure"
+          - text: "7. Final step: Click the '⋮' menu next to your client, select 'Change consent method', choose 'Trusted', and confirm. It should look like this:"
+          - text: "![Change Consent Method](https://qlik.dev/_astro/7.0kAhg7Q9_1NVk60.webp)"
+          - text: "⚠️ Keep your Client ID and Secret safe - you'll need them for the environment setup later!"
+          - text: "Ready to move on to creating the impersonation client?"
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: finish_step
