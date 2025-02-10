@@ -25,6 +25,7 @@ trigger:
       conditions:
         - conditionId: text_match_regex
           params:
+            text: "${userMessageText}"
             regex: .*([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}).*
       then:
         do:
