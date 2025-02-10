@@ -17,9 +17,7 @@ startFlow:
           - text: "1. In your Qlik Cloud tenant, go to the Management Console and select 'OAuth clients'\n
               2. Click 'Create new' and select 'Web' from the Client type dropdown\n
               3. Give your client a name (e.g., 'Backend Auth Client')\n
-              4. In the Scopes section, select these required scopes:\n
-                 • user_default\n
-                 • admin_classic\n
+              4. In the Scopes section, select these required scopes: 'user_default' and 'admin_classic'\n
               5. Important: Check the box to enable the client as a machine-to-machine application\n
               6. Click Create and save your Client ID and Secret somewhere secure"
           - text: "7. Final step: Click the '⋮' menu next to your client, select 'Change consent method', choose 'Trusted', and confirm. It should look like this:"

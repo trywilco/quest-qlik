@@ -17,9 +17,7 @@ startFlow:
           - text: "Here's how to set it up:"
           - text: "1. In OAuth clients, click 'Create new' and select 'Web'\n
               2. Name it 'Frontend Auth Client'\n
-              3. For scopes, select:\n
-                 • user.profile\n
-                 • user.impersonation\n
+              3. For scopes, select: 'user_default'\n
               4. Important: Add your Codespace URL to the Allowed Origins list. You can find this URL in your browser's address bar - it looks like 'https://yourname-yourproject-xxxx.github.dev'\n
               5. Check the box to enable machine-to-machine impersonation\n
               6. Click Create and save your Client ID and Secret"
