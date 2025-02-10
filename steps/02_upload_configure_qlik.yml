@@ -2,7 +2,7 @@ id: upload_configure_qlik
 learningObjectives:
   - Upload the demo Qlik Sense app and configure sharing permissions
 hints:
-  - The app ID looks like a GUID: 946d5af4-e089-42d3-9ba7-1d21adb68472
+  - "The app ID looks like a GUID: 946d5af4-e089-42d3-9ba7-1d21adb68472"
   - Can't find the app ID? Open the app and check the URL - it's right there!
 startFlow:
   do:
