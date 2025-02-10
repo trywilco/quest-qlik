@@ -1,0 +1,25 @@
+id: create_qlik_account
+learningObjectives:
+  - Create a Qlik Cloud account to access the platform's analytics capabilities
+hints:
+  - Make sure to verify your email after registration
+  - Save your credentials in a secure place
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: "Before we dive into the technical stuff, let's get you set up with a Qlik account!"
+          - text: "Head over to [Qlik's website](https://www.qlik.com) and click on the 'Free Trial' or 'Sign Up' button."
+          - text: "Fill out the registration form with your details. Don't worry, you can start with a free trial - it's perfect for learning!"
+          - text: "Once registered, you'll receive a confirmation email. Make sure to verify your account."
+          - text: "After verification, you'll have access to Qlik Cloud, where all the magic happens!"
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: finish_step

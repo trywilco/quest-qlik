@@ -1,0 +1,32 @@
+id: configure_env_vars
+learningObjectives:
+  - Securely configure environment variables for Qlik Cloud.
+hints:
+  - Ensure you have all required OAuth and Qlik credentials handy before
+    starting.
+  - Names matter! `.env.dev` is critical, like knowing Ness's favorite password.
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: "Time for some secret-keeping! We need to set up our environment variables to keep sensitive data safe and connect to Qlik Cloud properly."
+          - text: "First, find the `template.env` file in your project and rename it to `.env.dev`. Now, let's fill it with the right values:"
+          - text: "For OAuth authentication, you'll need these from your Administration activity center:\n
+              • `OAUTH_BACKEND_CLIENT_ID` and `OAUTH_BACKEND_CLIENT_SECRET`: Use the credentials from your OAuth M2M client\n
+              • `OAUTH_FRONTEND_CLIENT_ID` and `OAUTH_FRONTEND_CLIENT_SECRET`: Use the credentials from your OAuth M2M impersonation client\n
+              ⚠️ Keep these secrets safe - they're like master keys to your tenant!"
+          - text: "Next, set these up:\n
+              • `SESSION_SECRET`: Create a long, random string (the more random, the better!) - this will sign your session cookies\n
+              • `TENANT_URI`: Your Qlik Cloud hostname (looks like `z29kgagw312sl0g.eu.qlikcloud.com`)\n
+              • `APP_ID`: Remember that app ID from the previous step? Pop it in here!"
+          - text: "Need help finding these values? Check the [Qlik Cloud Administration](https://help.qlik.com/en-US/cloud-services/Subsystems/Hub/Content/Sense_Hub/Admin/mc-overview.htm) guide."
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: finish_step

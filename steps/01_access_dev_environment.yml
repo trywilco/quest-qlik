@@ -1,0 +1,23 @@
+id: introduction_to_qlik
+learningObjectives:
+  - Understand how Qlik Sense analytics can be integrated into web applications using OAuth authentication
+hints:
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: "Hey there! I'm Lucca, and I'll be your guide as we explore the powerful world of Qlik Sense analytics integration!"
+          - text: "Qlik Sense is a modern data analytics platform that we'll be embedding into our application using OAuth authentication. This quest will teach you how to seamlessly integrate interactive visualizations and insights."
+          - text: "We'll cover three main areas: setting up Qlik Cloud, configuring OAuth authentication, and embedding analytics into our application. By the end, you'll have a fully functional app with embedded analytics!"
+          - text: "The best part? You'll learn industry-standard practices for secure analytics integration that you can apply to real-world projects."
+          - text: "Ready to start this analytics adventure?"
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: finish_step

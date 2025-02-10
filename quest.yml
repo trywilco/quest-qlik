@@ -1,0 +1,24 @@
+id: qlik_sense_integration
+title: Integrating Qlik Sense with OAuth
+subtitle: "Unlock insights: Embed Qlik Sense Analytics"
+description: In this quest, you'll master the integration of Qlik Sense
+  analytics using `qlik-embed` with OAuth impersonation. You'll set up OAuth for
+  machine-to-machine handling and deploy an app with seamlessly embedded
+  analytics, perfect for learning and evaluation.
+skills:
+  - frontend
+  - backend
+  - security
+  - documentation
+steps:
+  - introduction_to_qlik
+  - create_qlik_account
+  - upload_configure_qlik
+  - configure_env_vars
+  - install_run_app
+level: intermediate
+type: PROMPT
+duration: 2
+repository: https://github.com/qlik-oss/qlik-cloud-embed-oauth-impersonation
+frameworks:
+  backend: null
